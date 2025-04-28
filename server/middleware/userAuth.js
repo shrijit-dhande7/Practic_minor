@@ -6,9 +6,9 @@ const userAuth= async (req ,res ,next)=>{
 
     const {token}=req.cookies;
 
-    // if(!token){
-    //     return res.json({success:false ,message:" not autherised login again"})
-    // }
+    if(!token){
+        return res.json({success:ture ,message:" login succesful"})
+    }
     try{
         // decode the token
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
